@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="SAE2.03" company="" webLink="http://" view-date="2025-06-01" view-index="0" gantt-divider-location="459" resource-divider-location="300" version="3.3.3316" locale="en_US">
+    <description/>
+    <view zooming-state="default:4" id="gantt-chart">
+        <field id="tpd15" name="Notes" width="20" order="-1"/>
+        <field id="tpd3" name="Name" width="262" order="0"/>
+        <field id="tpd4" name="Begin date" width="98" order="1"/>
+        <field id="tpd5" name="End date" width="98" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#000000 #ff0000 #e1e1e1 #ff3333 #cc0000 #ff6666 #ff9999 #ffcccc #33ff33 #66ff66]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="cdefcb3f59b34f23a5d56d0412f33275" name="Organisation" color="#000000" meeting="false" start="2025-06-05" duration="1" complete="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" uid="926ff4ec514b47319f678beea2d28536" name="Virtualisation" color="#ccccff" meeting="false" start="2025-06-06" duration="6" complete="0" expand="true">
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+            <task id="3" uid="f36996de3bea48d5ba3d48575f0c1411" name="Mise en place VM" color="#9999ff" meeting="false" start="2025-06-06" duration="1" complete="0" expand="true">
+                <depend id="4" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="4" uid="bb6b86451e14466794c8bc93fab33795" name="Configuration des Serveurs" color="#6666ff" meeting="false" start="2025-06-07" duration="1" complete="0" expand="true">
+                <depend id="5" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="5" uid="3342f192565b4b6e88e645541daca47d" name="Hebergement Django et DB SQL" color="#3333ff" meeting="false" start="2025-06-11" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="9" uid="25d718069e8346b7914bde3dd267b421" name="MYSQL" color="#ccffcc" meeting="false" start="2025-06-06" duration="5" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <task id="11" uid="49b99c74efcd4f648b21cf5c38b5762e" name="Shéma Relationnel Tables" color="#99ff99" meeting="false" start="2025-06-06" duration="1" complete="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="12" uid="8c6c20f38490484f940aae71b9cb9c9c" name="Création des Tables MYSQL" color="#66ff66" meeting="false" start="2025-06-07" duration="1" complete="0" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="13" uid="9c64103fe83e4096b839686b48939903" name="Importer DB SQL" color="#33ff33" meeting="false" start="2025-06-10" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="14" uid="daa0089ce76f426389ea513fe4012dc1" name="Django" color="#ffcccc" meeting="false" start="2025-06-06" duration="5" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <task id="15" uid="399c809941b74af58b335ebd37a8548c" name="Mise en place Django" color="#ff9999" meeting="false" start="2025-06-06" duration="1" complete="0" expand="true">
+                <depend id="16" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="16" uid="f853cfc486074e1c94c1f026fd997b6e" name="Creation des CRUD" color="#ff6666" meeting="false" start="2025-06-07" duration="1" complete="0" expand="true">
+                <depend id="17" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="17" uid="84446f415f9e4973b1a739f7528b36ee" name="Squelette HTML" color="#ff3333" meeting="false" start="2025-06-08" duration="1" complete="0" expand="true">
+                <depend id="18" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="18" uid="493e26ffee2c401a9dbd107829b351d5" name="Design CSS (JS)" color="#ff0000" meeting="false" start="2025-06-09" duration="1" complete="0" expand="true">
+                <depend id="19" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="19" uid="436a9cbf14de4330a779ff5ae71586e4" name="Liaison avec la DB SQL" color="#cc0000" meeting="false" start="2025-06-10" duration="1" complete="0" expand="true">
+                <depend id="13" type="1" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="20" uid="7025c093b5434fb8bc5d2bad47e589f5" name="Presentaton Projet" color="#000000" meeting="false" start="2025-06-12" duration="1" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Nolan" function="1" contacts="Nolan.hoarau@uha.fr" phone=""/>
+        <resource id="1" name="Guillaume" function="2" contacts="guillaume.baudrey@uha.fr" phone=""/>
+        <resource id="2" name="Arjanit" function="3" contacts="arjanit.shala@uha.fr" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="1" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="15" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="16" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="17" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="18" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="2" function="3" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+    <roles>
+        <role id="1" name="Virtualisation"/>
+        <role id="2" name="MYSQL"/>
+        <role id="3" name="Django"/>
+    </roles>
+</project>
