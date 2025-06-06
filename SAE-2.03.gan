@@ -42,19 +42,18 @@
         <task id="0" uid="cdefcb3f59b34f23a5d56d0412f33275" name="Organisation" color="#000000" meeting="false" start="2025-06-05" duration="1" complete="0" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="1" uid="926ff4ec514b47319f678beea2d28536" name="Virtualisation" color="#ccccff" meeting="false" start="2025-06-06" duration="12" complete="0" expand="true">
-            <task id="3" uid="f36996de3bea48d5ba3d48575f0c1411" name="Mise en place VM" color="#9999ff" meeting="false" start="2025-06-06" duration="1" complete="0" expand="true">
+        <task id="1" uid="926ff4ec514b47319f678beea2d28536" name="Virtualisation" color="#ccccff" meeting="false" start="2025-06-06" duration="7" complete="0" expand="true">
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+            <task id="3" uid="f36996de3bea48d5ba3d48575f0c1411" name="Mise en place VMs" color="#9999ff" meeting="false" start="2025-06-06" duration="1" complete="0" expand="true">
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="4" uid="bb6b86451e14466794c8bc93fab33795" name="Configuration des Serveurs" color="#6666ff" meeting="false" start="2025-06-07" duration="5" complete="0" expand="true">
+            <task id="4" uid="bb6b86451e14466794c8bc93fab33795" name="Configuration des Serveurs" color="#6666ff" meeting="false" start="2025-06-07" duration="4" complete="0" expand="true">
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="5" uid="3342f192565b4b6e88e645541daca47d" name="Hebergement Django et DB SQL" color="#3333ff" meeting="false" start="2025-06-13" duration="5" complete="0" expand="true">
-                <depend id="21" type="2" difference="0" hardness="Strong"/>
-            </task>
+            <task id="5" uid="3342f192565b4b6e88e645541daca47d" name="Hebergement Django et DB SQL" color="#3333ff" meeting="false" start="2025-06-11" duration="2" complete="0" expand="true"/>
         </task>
         <task id="9" uid="25d718069e8346b7914bde3dd267b421" name="MYSQL" color="#ccffcc" meeting="false" start="2025-06-05" duration="8" complete="0" expand="true">
-            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
             <task id="11" uid="49b99c74efcd4f648b21cf5c38b5762e" name="Shéma Relationnel Tables" color="#99ff99" meeting="false" start="2025-06-05" duration="1" complete="0" expand="true">
                 <depend id="12" type="2" difference="0" hardness="Strong"/>
                 <depend id="16" type="2" difference="0" hardness="Strong"/>
@@ -65,7 +64,7 @@
             <task id="13" uid="9c64103fe83e4096b839686b48939903" name="Importer DB SQL" color="#33ff33" meeting="false" start="2025-06-11" duration="2" complete="0" expand="true"/>
         </task>
         <task id="14" uid="daa0089ce76f426389ea513fe4012dc1" name="Django" color="#ffcccc" meeting="false" start="2025-06-05" duration="8" complete="0" expand="true">
-            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
             <task id="15" uid="399c809941b74af58b335ebd37a8548c" name="Mise en place Django" color="#ff9999" meeting="false" start="2025-06-05" duration="1" complete="0" expand="true">
                 <depend id="16" type="2" difference="0" hardness="Strong"/>
             </task>
@@ -78,10 +77,15 @@
                 <depend id="19" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="19" uid="436a9cbf14de4330a779ff5ae71586e4" name="Liaison avec la DB SQL" color="#cc0000" meeting="false" start="2025-06-11" duration="2" complete="0" expand="true">
+                <depend id="5" type="1" difference="0" hardness="Strong"/>
                 <depend id="13" type="1" difference="0" hardness="Strong"/>
             </task>
         </task>
-        <task id="21" uid="793222428bb04964810d42021d56cb12" name="Preparation Presentation" color="#e1e1e1" meeting="false" start="2025-06-18" duration="1" complete="0" expand="true">
+        <task id="21" uid="793222428bb04964810d42021d56cb12" name="Finalisation" color="#e1e1e1" meeting="false" start="2025-06-13" duration="6" complete="0" expand="true">
+            <notes><![CDATA[Finalisation des fiches de procedure
+Finalisation du depot git du projet
+Preparation fiche Portfolio (individuel)
+Preparation de la presentation (PowerPoint, 8-10min)]]></notes>
             <depend id="20" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="20" uid="7025c093b5434fb8bc5d2bad47e589f5" name="Presentaton Projet" color="#000000" meeting="false" start="2025-06-19" duration="1" complete="0" expand="true"/>
