@@ -5,7 +5,7 @@ USE gestion_absence;
 
 -- 1. Table des enseignants
 CREATE TABLE enseignants (
-    id_enseignants INT AUTO_INCREMENT PRIMARY KEY,
+    id_enseignants INT SERIAL PRIMARY KEY,
     nom_enseignants VARCHAR(100) NOT NULL,
     prenom_enseignant VARCHAR(100) NOT NULL,
     email_enseignants VARCHAR(150) NOT NULL UNIQUE
@@ -13,11 +13,11 @@ CREATE TABLE enseignants (
 
 -- 2. Table des cours
 CREATE TABLE cours (
-    id_cours INT AUTO_INCREMENT PRIMARY KEY,
+    id_cours INT SERIAL PRIMARY KEY,
     titre_cours VARCHAR(150) NOT NULL,
     date_cours DATE NOT NULL,
     enseignant_cours INT NOT NULL,
-    durée_cours TIME NOT NULL,
+    durée_cours INTERVAL NOT NULL,
     groupe_cours INT,
     FOREIGN KEY (enseignant_cours) REFERENCES enseignants(id_enseignants)
         ON DELETE CASCADE ON UPDATE CASCADE
@@ -25,7 +25,7 @@ CREATE TABLE cours (
 
 -- 3. Table des groupes d'étudiants
 CREATE TABLE `groupes_d_etudiants` (
-    id_groupe INT AUTO_INCREMENT PRIMARY KEY,
+    id_groupe INT SERIAL PRIMARY KEY,
     id_cours INT NOT NULL,
     nom_groupe VARCHAR(100) NOT NULL,
     FOREIGN KEY (id_cours) REFERENCES cours(id_cours)
@@ -34,20 +34,20 @@ CREATE TABLE `groupes_d_etudiants` (
 
 -- 4. Table des étudiants
 CREATE TABLE etudiants (
-    id_etudiants INT AUTO_INCREMENT PRIMARY KEY,
+    id_etudiants INT SERIAL PRIMARY KEY,
     id_groupes INT,
     nom_etudiants VARCHAR(100) NOT NULL,
     prenom_etudiants VARCHAR(100) NOT NULL,
     email_etudiants VARCHAR(150) NOT NULL UNIQUE,
     groupe_etudiants VARCHAR(100),
-    photo_etudiants LONGBLOB,
+    photo_etudiants BYTEA,
     FOREIGN KEY (id_groupes) REFERENCES groupes_d_etudiants(id_groupe)
         ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 5. Table des absences aux cours
 CREATE TABLE absences_cours (
-    id_absences_cours INT AUTO_INCREMENT PRIMARY KEY,
+    id_absences_cours INT SERIAL PRIMARY KEY,
     id_cours INT NOT NULL,
     id_enseignants INT NOT NULL,
     id_etudiants INT NOT NULL,
