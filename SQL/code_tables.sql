@@ -19,7 +19,7 @@ CREATE TABLE cours (
     enseignant_cours INT NOT NULL,
     durée_cours INTERVAL NOT NULL,
     groupe_cours INT,
-    FOREIGN KEY (enseignant_cours) REFERENCES enseignants(id_enseignants)
+    FOREIGN KEY (enseignant_cours) REFERENCES enseignants(id_enseignant)
         ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -34,29 +34,29 @@ CREATE TABLE `groupes_d_etudiants` (
 
 -- 4. Table des étudiants
 CREATE TABLE etudiants (
-    id_etudiants SERIAL PRIMARY KEY,
-    id_groupes INT,
-    nom_etudiants VARCHAR(100) NOT NULL,
-    prenom_etudiants VARCHAR(100) NOT NULL,
-    email_etudiants VARCHAR(150) NOT NULL UNIQUE,
+    id_etudiant SERIAL PRIMARY KEY,
+    id_groupe INT,
+    nom_etudiant VARCHAR(100) NOT NULL,
+    prenom_etudiant VARCHAR(100) NOT NULL,
+    email_etudiant VARCHAR(150) NOT NULL UNIQUE,
     groupe_etudiants VARCHAR(100),
-    photo_etudiants BYTEA,
-    FOREIGN KEY (id_groupes) REFERENCES groupes_d_etudiants(id_groupe)
+    photo_etudiant BYTEA,
+    FOREIGN KEY (id_groupe) REFERENCES groupes_d_etudiants(id_groupe)
         ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 5. Table des absences aux cours
 CREATE TABLE absences_cours (
-    id_absences_cours SERIAL PRIMARY KEY,
+    id_absence_cours SERIAL PRIMARY KEY,
     id_cours INT NOT NULL,
-    id_enseignants INT NOT NULL,
-    id_etudiants INT NOT NULL,
+    id_enseignant INT NOT NULL,
+    id_etudiant INT NOT NULL,
     justifie BOOLEAN DEFAULT FALSE,
     justification TEXT,
     FOREIGN KEY (id_cours) REFERENCES cours(id_cours)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_enseignants) REFERENCES enseignants(id_enseignants)
+    FOREIGN KEY (id_enseignant) REFERENCES enseignants(id_enseignant)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_etudiants) REFERENCES etudiants(id_etudiants)
+    FOREIGN KEY (id_etudiant) REFERENCES etudiants(id_etudiant)
         ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
