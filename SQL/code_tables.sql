@@ -5,15 +5,15 @@ USE gestion_absence;
 
 -- 1. Table des enseignants
 CREATE TABLE enseignants (
-    id_enseignants INT SERIAL PRIMARY KEY,
-    nom_enseignants VARCHAR(100) NOT NULL,
+    id_enseignant SERIAL PRIMARY KEY,
+    nom_enseignant VARCHAR(100) NOT NULL,
     prenom_enseignant VARCHAR(100) NOT NULL,
-    email_enseignants VARCHAR(150) NOT NULL UNIQUE
+    email_enseignant VARCHAR(150) NOT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 2. Table des cours
 CREATE TABLE cours (
-    id_cours INT SERIAL PRIMARY KEY,
+    id_cours SERIAL PRIMARY KEY,
     titre_cours VARCHAR(150) NOT NULL,
     date_cours DATE NOT NULL,
     enseignant_cours INT NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE cours (
 
 -- 3. Table des groupes d'étudiants
 CREATE TABLE `groupes_d_etudiants` (
-    id_groupe INT SERIAL PRIMARY KEY,
+    id_groupe SERIAL PRIMARY KEY,
     id_cours INT NOT NULL,
     nom_groupe VARCHAR(100) NOT NULL,
     FOREIGN KEY (id_cours) REFERENCES cours(id_cours)
@@ -34,7 +34,7 @@ CREATE TABLE `groupes_d_etudiants` (
 
 -- 4. Table des étudiants
 CREATE TABLE etudiants (
-    id_etudiants INT SERIAL PRIMARY KEY,
+    id_etudiants SERIAL PRIMARY KEY,
     id_groupes INT,
     nom_etudiants VARCHAR(100) NOT NULL,
     prenom_etudiants VARCHAR(100) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE etudiants (
 
 -- 5. Table des absences aux cours
 CREATE TABLE absences_cours (
-    id_absences_cours INT SERIAL PRIMARY KEY,
+    id_absences_cours SERIAL PRIMARY KEY,
     id_cours INT NOT NULL,
     id_enseignants INT NOT NULL,
     id_etudiants INT NOT NULL,
