@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h2 { color: #007BFF; }
+        p { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h2>Fiche d’absence</h2>
+    <p><strong>Étudiant :</strong> {{ absence.etudiant }}</p>
+    <p><strong>Cours :</strong> {{ absence.cours.titre }} ({{ absence.cours.date }} à {{ absence.cours.heure }})</p>
+    <p><strong>Justifié :</strong> {{ absence.justifie }}</p>
+    {% if absence.justification %}
+        <p><strong>Justificatif :</strong> {{ absence.justification.url }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'absences/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Absences</h2>
+
+<!-- Formulaire -->
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer l'absence</button>
+</form>
+
+<hr>
+
+<!-- Liste des absences -->
+<ul>
+    {% for absence in absences %}
+        <li>
+            <strong>{{ absence.etudiant }}</strong> –
+            {{ absence.cours.titre }} ({{ absence.cours.date }}) –
+            Justifié : {{ absence.justifie|yesno:"Oui,Non" }}
+
+            <!-- Lien vers justificatif s'il existe -->
+            {% if absence.justification %}
+                – <a href="{{ absence.justification.url }}" target="_blank">Voir justificatif</a>
+            {% endif %}
+
+            <!-- Lien vers PDF uniquement si absence.id existe -->
+            {% if absence.id %}
+                – <a href="{% url 'fiche_absence_pdf' absence.id %}" target="_blank">🧾 PDF</a>
+            {% else %}
+                – <em>PDF non disponible</em>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>Aucune absence enregistrée.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
