@@ -1,0 +1,29 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+<h2>Détail des absences de {{ etudiant.prenom }} {{ etudiant.nom }}</h2>
+
+<p><strong>Email :</strong> {{ etudiant.email }}</p>
+<p><strong>Groupe :</strong> {{ etudiant.groupe }}</p>
+
+<h3>Résumé :</h3>
+<ul>
+    <li>Total d’absences : {{ total }}</li>
+    <li>Justifiées : {{ justifiees }}</li>
+    <li>Non justifiées : {{ non_justifiees }}</li>
+</ul>
+
+<h3>Liste des absences :</h3>
+<ul>
+    {% for absence in absences %}
+        <li>
+            Cours : {{ absence.cours.titre }} ({{ absence.cours.date }}) –
+            Justifié : {{ absence.justifie }}
+            {% if absence.justification %}
+                – <a href="{{ absence.justification.url }}" target="_blank">Voir justificatif</a>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>Aucune absence.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
