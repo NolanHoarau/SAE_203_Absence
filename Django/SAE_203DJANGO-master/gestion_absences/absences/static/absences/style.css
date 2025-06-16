@@ -1,0 +1,179 @@
+/* ====== GENERAL ====== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 90px auto 30px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* ====== NAVIGATION ====== */
+nav {
+    background-color: #111;
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #1abc9c;
+}
+
+/* ====== HEADINGS ====== */
+h1, h2, h3 {
+    color: #1abc9c;
+    text-align: center;
+}
+
+/* ====== FORMS ====== */
+form {
+    margin-bottom: 25px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"],
+form input[type="date"],
+form input[type="time"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+form button {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #159c86;
+}
+
+/* ====== LISTES ====== */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+
+}
+
+/* ====== LINKS ====== */
+a {
+    color: #1abc9c;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ====== MEDIA ====== */
+@media (max-width: 600px) {
+    nav {
+        font-size: 14px;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
+
+.class_css_input {
+    background-color: black;
+
+}
+select {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #f4f4f4;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select option {
+    background-color: #2c5364;
+    color: #f4f4f4;
+}
+.page-accueil {
+    background-image: url('../images/ar.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.btn-modifier,
+.btn-supprimer {
+    display: inline-block;
+    padding: 6px 14px;
+    margin: 5px 5px 0 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-modifier {
+    background-color: #2980b9;
+}
+
+.btn-modifier:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+}
+
+.btn-supprimer {
+    background-color: #c0392b;
+}
+
+.btn-supprimer:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05);
+}
+

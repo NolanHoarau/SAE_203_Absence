@@ -1,0 +1,12 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+    <h2>Modifier un groupe</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-modifier">
+            📝 Enregistrer les modifications
+        </button>
+    </form>
+{% endblock %}
+ml>

@@ -1,0 +1,20 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+    <h2>Enseignants</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-ajouter">➕ Ajouter un enseignant</button>
+    </form>
+
+    <ul>
+        {% for enseignant in enseignants %}
+            <li>
+                {{ enseignant.prenom }} {{ enseignant.nom }} ({{ enseignant.email }})
+
+                <a href="{% url 'modifier_enseignant' enseignant.id %}" class="btn-modifier">📝 Modifier</a>
+                <a href="{% url 'supprimer_enseignant' enseignant.id %}" class="btn-supprimer">✖️ Supprimer</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

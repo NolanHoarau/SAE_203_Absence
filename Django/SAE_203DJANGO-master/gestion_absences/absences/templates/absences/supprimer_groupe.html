@@ -1,0 +1,12 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+    <h2>Supprimer le groupe</h2>
+    <p>Es-tu sûr de vouloir supprimer le groupe <strong>{{ groupe.nom }}</strong> ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-supprimer">
+            ✖️ Confirmer la suppression
+        </button>
+        <a href="{% url 'groupes' %}" class="btn-annuler">Annuler</a>
+    </form>
+{% endblock %}

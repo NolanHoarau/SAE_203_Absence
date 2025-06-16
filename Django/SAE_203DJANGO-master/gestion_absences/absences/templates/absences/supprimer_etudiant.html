@@ -1,0 +1,9 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+<h2>Supprimer l'étudiant {{ etudiant.nom }} {{ etudiant.prenom }} ?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+    <a href="{% url 'etudiants' %}">Annuler</a>
+</form>
+{% endblock %}

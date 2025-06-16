@@ -1,0 +1,10 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+<h2>Supprimer l'absence</h2>
+<p>Es-tu sûr de vouloir supprimer cette absence ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmer la suppression</button>
+    <a href="{% url 'absences' %}">Annuler</a>
+</form>
+{% endblock %}
