@@ -1,20 +1,32 @@
 {% extends 'absences/base.html' %}
 {% block content %}
     <h2>Enseignants</h2>
+
+    <!-- Formulaire d'ajout -->
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn-ajouter">➕ Ajouter un enseignant</button>
+        <button type="submit" class="btn-ajouter">
+            <i class="fas fa-user-plus"></i> Ajouter un enseignant
+        </button>
     </form>
 
+    <!-- Liste des enseignants -->
     <ul>
         {% for enseignant in enseignants %}
-            <li>
-                {{ enseignant.prenom }} {{ enseignant.nom }} ({{ enseignant.email }})
+            <li style="background-color: rgba(255, 255, 255, 0.07); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
+                <strong>{{ enseignant.prenom }} {{ enseignant.nom }}</strong> ({{ enseignant.email }})<br>
 
-                <a href="{% url 'modifier_enseignant' enseignant.id %}" class="btn-modifier">📝 Modifier</a>
-                <a href="{% url 'supprimer_enseignant' enseignant.id %}" class="btn-supprimer">✖️ Supprimer</a>
+                <!-- Boutons d'action -->
+                <a href="{% url 'modifier_enseignant' enseignant.id %}" class="btn-modifier">
+                    <i class="fas fa-edit"></i> Modifier
+                </a>
+                <a href="{% url 'supprimer_enseignant' enseignant.id %}" class="btn-supprimer">
+                    <i class="fas fa-trash-alt"></i> Supprimer
+                </a>
             </li>
+        {% empty %}
+            <li>Aucun enseignant enregistré.</li>
         {% endfor %}
     </ul>
 {% endblock %}
