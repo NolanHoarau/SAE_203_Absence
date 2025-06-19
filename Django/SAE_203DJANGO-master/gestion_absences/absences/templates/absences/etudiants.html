@@ -1,0 +1,44 @@
+{% extends 'absences/base.html' %}
+{% load static %}
+{% block content %}
+    <h2>Étudiants</h2>
+
+    <!-- Formulaire d'ajout -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-ajouter">
+            <i class="fas fa-user-plus"></i> Ajouter un étudiant
+        </button>
+    </form>
+
+    <!-- Liste des étudiants -->
+    <ul>
+        {% for etudiant in etudiants %}
+            <li style="background-color: rgba(255, 255, 255, 0.07); padding: 10px; border-radius: 6px; margin-bottom: 10px; display: flex; align-items: center;">
+
+                <!-- Affichage de la photo s’il y en a une -->
+                {% if etudiant.photo %}
+                    <img src="{{ etudiant.photo.url }}" alt="Photo de {{ etudiant.prenom }}" style="height: 70px; width: 70px; object-fit: cover; border-radius: 50%; margin-right: 15px;">
+                {% endif %}
+
+                <div style="flex: 1;">
+                    <strong>{{ etudiant.prenom }} {{ etudiant.nom }}</strong> ({{ etudiant.email }})<br>
+                    Groupe : {{ etudiant.groupe }}
+                </div>
+
+                <!-- Boutons actions -->
+                <div>
+                    <a href="{% url 'modifier_etudiant' etudiant.id %}" class="btn-modifier" style="margin-right: 10px;">
+                        <i class="fas fa-edit"></i> Modifier
+                    </a>
+                    <a href="{% url 'supprimer_etudiant' etudiant.id %}" class="btn-supprimer">
+                        <i class="fas fa-trash-alt"></i> Supprimer
+                    </a>
+                </div>
+            </li>
+        {% empty %}
+            <li>Aucun étudiant pour l’instant.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

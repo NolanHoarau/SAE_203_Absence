@@ -1,0 +1,22 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+    <h2>Étudiants</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ajouter un étudiant</button>
+    </form>
+    <ul>
+        {% for etudiant in etudiants %}
+            <li>{{ etudiant.prenom }} {{ etudiant.nom }} ({{ etudiant.email }}) - Groupe : {{ etudiant.groupe }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+{% for etudiant in etudiants %}
+    <li style="background-color:yellow;">
+        <a href="{% url 'detail_etudiant' etudiant.id %}">
+            {{ etudiant.prenom }} {{ etudiant.nom }}
+        </a>
+        ({{ etudiant.email }}) - Groupe : {{ etudiant.groupe }}
+    </li>
+{% endfor %}

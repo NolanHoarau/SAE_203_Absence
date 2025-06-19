@@ -1,0 +1,25 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+<h2>Cours</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ajouter un cours</button>
+</form>
+
+<hr>
+
+<ul>
+    {% for c in cours %}
+        <li>
+            <strong>{{ c.titre }}</strong> – {{ c.date }} à {{ c.heure }} ({{ c.duree }} min)
+            – Enseignant : {{ c.enseignant }} – Groupe : {{ c.groupe }}
+            <a href="{% url 'modifier_cours' c.id %}" class="btn-modifier">📝</a>
+            <a href="{% url 'supprimer_cours' c.id %}" class="btn-supprimer">✖️</a>
+        </li>
+    {% empty %}
+        <li>Aucun cours enregistré.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

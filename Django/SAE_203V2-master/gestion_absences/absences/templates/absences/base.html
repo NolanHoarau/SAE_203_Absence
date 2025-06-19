@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion des absences</title>
+    <link rel="stylesheet" href="/static/absences/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'index' %}">Accueil</a> |
+        <a href="{% url 'groupes' %}">Groupes</a> |
+        <a href="{% url 'etudiants' %}">Étudiants</a> |
+        <a href="{% url 'enseignants' %}">Enseignants</a> |
+        <a href="{% url 'cours' %}">Cours</a> |
+        <a href="{% url 'absences' %}">Absences</a>
+    </nav>
+    <hr>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+    <title>Gestion des absences</title>
+    <link rel="stylesheet" href="{% static 'absences/style.css' %}">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body class="{% block body_class %}{% endblock %}">
+    <nav>
+        <a href="{% url 'index' %}">Accueil</a> |
+        <a href="{% url 'groupes' %}">Groupes</a> |
+        <a href="{% url 'etudiants' %}">Étudiants</a> |
+        <a href="{% url 'enseignants' %}">Enseignants</a> |
+        <a href="{% url 'cours' %}">Cours</a> |
+        <a href="{% url 'absences' %}">Absences</a>
+    </nav>
+    <hr>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

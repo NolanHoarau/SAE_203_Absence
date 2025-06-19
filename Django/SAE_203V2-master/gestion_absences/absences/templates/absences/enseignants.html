@@ -1,0 +1,14 @@
+{% extends 'absences/base.html' %}
+{% block content %}
+    <h2>Enseignants</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ajouter un enseignant</button>
+    </form>
+    <ul>
+        {% for enseignant in enseignants %}
+            <li>{{ enseignant.prenom }} {{ enseignant.nom }} ({{ enseignant.email }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
